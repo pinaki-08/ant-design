@@ -26,4 +26,15 @@ describe('Divider', () => {
       marginRight: 10,
     });
   });
+
+  it('support string variant', () => {
+    const { container } = render(
+      <Divider variant="dotted">
+        test dotted
+      </Divider>,
+    );
+    expect(container?.querySelector<HTMLSpanElement>('.ant-divider-dotted')).toHaveStyle({
+      borderStyle: 'dotted',
+    });
+  });
 });
